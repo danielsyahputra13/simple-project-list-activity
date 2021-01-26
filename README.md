@@ -1,1 +1,1 @@
-# lsimple-project-list-activity
+# Simple Project - List Activity
