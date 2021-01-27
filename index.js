@@ -14,7 +14,7 @@ app.set('views', 'views');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(adminRoutes);
+app.use("/admin", adminRoutes);
 app.use(activitRoutes);
 app.use(errorControllers.get404);
 
