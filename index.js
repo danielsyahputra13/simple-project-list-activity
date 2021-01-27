@@ -3,17 +3,19 @@ const app = express();
 const path = require('path');
 
 /**
- * Import controllers
+ * Import controllers and routes
  */
 const errorControllers = require('./controllers/error');
-const activityControllers = require('./controllers/activity');
+const adminRoutes = require('./routes/admin');
+const activitRoutes = require('./routes/activity');
 
 app.set("view engine", 'ejs');
 app.set('views', 'views');
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 
-app.use(activityControllers.getActivity);
+app.use(adminRoutes);
+app.use(activitRoutes);
 app.use(errorControllers.get404);
 
 app.listen(3000);
